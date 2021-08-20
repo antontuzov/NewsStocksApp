@@ -3,27 +3,59 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52E2DCB8A7C818DC164DFC26 /* Pods_NewsStocksApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B887C0E3F1871B2E3C50186 /* Pods_NewsStocksApp.framework */; };
 		B52485A726CF893500B246CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52485A626CF893500B246CB /* AppDelegate.swift */; };
 		B52485A926CF893500B246CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52485A826CF893500B246CB /* SceneDelegate.swift */; };
-		B52485AB26CF893500B246CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52485AA26CF893500B246CB /* ViewController.swift */; };
-		B52485AE26CF893500B246CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52485AC26CF893500B246CB /* Main.storyboard */; };
+		B52485AB26CF893500B246CB /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52485AA26CF893500B246CB /* WatchListViewController.swift */; };
 		B52485B026CF893800B246CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52485AF26CF893800B246CB /* Assets.xcassets */; };
 		B52485B326CF893800B246CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52485B126CF893800B246CB /* LaunchScreen.storyboard */; };
+		B5A768D926CF9176004B8C4D /* MarketDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A768D826CF9176004B8C4D /* MarketDataResponse.swift */; };
+		B5A768DB26CF91B7004B8C4D /* MetricsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A768DA26CF91B7004B8C4D /* MetricsResponse.swift */; };
+		B5A768DD26CF9210004B8C4D /* NewsStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A768DC26CF9210004B8C4D /* NewsStory.swift */; };
+		B5A768DF26CF923E004B8C4D /* SearchRespone.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A768DE26CF923E004B8C4D /* SearchRespone.swift */; };
+		B5A768E126CF9280004B8C4D /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A768E026CF9280004B8C4D /* APIBase.swift */; };
+		B5A768E326CF92FD004B8C4D /* PManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A768E226CF92FD004B8C4D /* PManager.swift */; };
+		B5A768E526CF93E2004B8C4D /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A768E426CF93E2004B8C4D /* SearchResultViewController.swift */; };
+		B5A768E726CF942B004B8C4D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A768E626CF942B004B8C4D /* NewsViewController.swift */; };
+		B5A768E926CF9473004B8C4D /* StockDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A768E826CF9473004B8C4D /* StockDetailsViewController.swift */; };
+		B5A768EB26CF953C004B8C4D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A768EA26CF953C004B8C4D /* Extensions.swift */; };
+		B5A768ED26CF95D1004B8C4D /* NewsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A768EC26CF95D1004B8C4D /* NewsHeaderView.swift */; };
+		B5A768EF26CF9603004B8C4D /* NewsStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A768EE26CF9603004B8C4D /* NewsStoryTableViewCell.swift */; };
+		B5A768F126CF962F004B8C4D /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A768F026CF962F004B8C4D /* SearchTableViewCell.swift */; };
+		B5A768F326CF965F004B8C4D /* WatchllistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A768F226CF965F004B8C4D /* WatchllistTableViewCell.swift */; };
+		B5A768F526CF968E004B8C4D /* StockChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A768F426CF968E004B8C4D /* StockChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B887C0E3F1871B2E3C50186 /* Pods_NewsStocksApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsStocksApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BD0630846982E28E2B8C11C /* Pods-NewsStocksApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsStocksApp.release.xcconfig"; path = "Target Support Files/Pods-NewsStocksApp/Pods-NewsStocksApp.release.xcconfig"; sourceTree = "<group>"; };
 		B52485A326CF893500B246CB /* NewsStocksApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsStocksApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52485A626CF893500B246CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B52485A826CF893500B246CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B52485AA26CF893500B246CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B52485AD26CF893500B246CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B52485AA26CF893500B246CB /* WatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
 		B52485AF26CF893800B246CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B52485B226CF893800B246CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B52485B426CF893800B246CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5A768D826CF9176004B8C4D /* MarketDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataResponse.swift; sourceTree = "<group>"; };
+		B5A768DA26CF91B7004B8C4D /* MetricsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsResponse.swift; sourceTree = "<group>"; };
+		B5A768DC26CF9210004B8C4D /* NewsStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStory.swift; sourceTree = "<group>"; };
+		B5A768DE26CF923E004B8C4D /* SearchRespone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRespone.swift; sourceTree = "<group>"; };
+		B5A768E026CF9280004B8C4D /* APIBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
+		B5A768E226CF92FD004B8C4D /* PManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PManager.swift; sourceTree = "<group>"; };
+		B5A768E426CF93E2004B8C4D /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		B5A768E626CF942B004B8C4D /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		B5A768E826CF9473004B8C4D /* StockDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDetailsViewController.swift; sourceTree = "<group>"; };
+		B5A768EA26CF953C004B8C4D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B5A768EC26CF95D1004B8C4D /* NewsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsHeaderView.swift; sourceTree = "<group>"; };
+		B5A768EE26CF9603004B8C4D /* NewsStoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStoryTableViewCell.swift; sourceTree = "<group>"; };
+		B5A768F026CF962F004B8C4D /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		B5A768F226CF965F004B8C4D /* WatchllistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchllistTableViewCell.swift; sourceTree = "<group>"; };
+		B5A768F426CF968E004B8C4D /* StockChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockChartView.swift; sourceTree = "<group>"; };
+		EF752CF88E64A340633CCB80 /* Pods-NewsStocksApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsStocksApp.debug.xcconfig"; path = "Target Support Files/Pods-NewsStocksApp/Pods-NewsStocksApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +63,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52E2DCB8A7C818DC164DFC26 /* Pods_NewsStocksApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FF674D74D1AE600F94E2578 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B887C0E3F1871B2E3C50186 /* Pods_NewsStocksApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		54AB94689B0BB0B6EAA697D8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF752CF88E64A340633CCB80 /* Pods-NewsStocksApp.debug.xcconfig */,
+				2BD0630846982E28E2B8C11C /* Pods-NewsStocksApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B524859A26CF893500B246CB = {
 			isa = PBXGroup;
 			children = (
 				B52485A526CF893500B246CB /* NewsStocksApp */,
 				B52485A426CF893500B246CB /* Products */,
+				54AB94689B0BB0B6EAA697D8 /* Pods */,
+				2FF674D74D1AE600F94E2578 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +108,69 @@
 		B52485A526CF893500B246CB /* NewsStocksApp */ = {
 			isa = PBXGroup;
 			children = (
-				B52485A626CF893500B246CB /* AppDelegate.swift */,
-				B52485A826CF893500B246CB /* SceneDelegate.swift */,
-				B52485AA26CF893500B246CB /* ViewController.swift */,
-				B52485AC26CF893500B246CB /* Main.storyboard */,
-				B52485AF26CF893800B246CB /* Assets.xcassets */,
-				B52485B126CF893800B246CB /* LaunchScreen.storyboard */,
+				B52485BE26CF898200B246CB /* AppStuff */,
+				B52485BC26CF896400B246CB /* Manager */,
+				B52485BD26CF897100B246CB /* Models */,
+				B52485BB26CF895900B246CB /* Views */,
+				B52485BA26CF894700B246CB /* Controllers */,
 				B52485B426CF893800B246CB /* Info.plist */,
 			);
 			path = NewsStocksApp;
+			sourceTree = "<group>";
+		};
+		B52485BA26CF894700B246CB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B52485AA26CF893500B246CB /* WatchListViewController.swift */,
+				B5A768E426CF93E2004B8C4D /* SearchResultViewController.swift */,
+				B5A768E626CF942B004B8C4D /* NewsViewController.swift */,
+				B5A768E826CF9473004B8C4D /* StockDetailsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B52485BB26CF895900B246CB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B52485B126CF893800B246CB /* LaunchScreen.storyboard */,
+				B5A768EC26CF95D1004B8C4D /* NewsHeaderView.swift */,
+				B5A768EE26CF9603004B8C4D /* NewsStoryTableViewCell.swift */,
+				B5A768F026CF962F004B8C4D /* SearchTableViewCell.swift */,
+				B5A768F226CF965F004B8C4D /* WatchllistTableViewCell.swift */,
+				B5A768F426CF968E004B8C4D /* StockChartView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B52485BC26CF896400B246CB /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B5A768E026CF9280004B8C4D /* APIBase.swift */,
+				B5A768E226CF92FD004B8C4D /* PManager.swift */,
+				B5A768EA26CF953C004B8C4D /* Extensions.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		B52485BD26CF897100B246CB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B5A768D826CF9176004B8C4D /* MarketDataResponse.swift */,
+				B5A768DA26CF91B7004B8C4D /* MetricsResponse.swift */,
+				B5A768DC26CF9210004B8C4D /* NewsStory.swift */,
+				B5A768DE26CF923E004B8C4D /* SearchRespone.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B52485BE26CF898200B246CB /* AppStuff */ = {
+			isa = PBXGroup;
+			children = (
+				B52485A626CF893500B246CB /* AppDelegate.swift */,
+				B52485A826CF893500B246CB /* SceneDelegate.swift */,
+				B52485AF26CF893800B246CB /* Assets.xcassets */,
+			);
+			path = AppStuff;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B52485B726CF893800B246CB /* Build configuration list for PBXNativeTarget "NewsStocksApp" */;
 			buildPhases = (
+				DDAE093909B410B6B80F54B3 /* [CP] Check Pods Manifest.lock */,
 				B524859F26CF893500B246CB /* Sources */,
 				B52485A026CF893500B246CB /* Frameworks */,
 				B52485A126CF893500B246CB /* Resources */,
+				EFEBCF47AE7A79FF02C72B42 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,19 +234,75 @@
 			files = (
 				B52485B326CF893800B246CB /* LaunchScreen.storyboard in Resources */,
 				B52485B026CF893800B246CB /* Assets.xcassets in Resources */,
-				B52485AE26CF893500B246CB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DDAE093909B410B6B80F54B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NewsStocksApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFEBCF47AE7A79FF02C72B42 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NewsStocksApp/Pods-NewsStocksApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NewsStocksApp/Pods-NewsStocksApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NewsStocksApp/Pods-NewsStocksApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B524859F26CF893500B246CB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B52485AB26CF893500B246CB /* ViewController.swift in Sources */,
+				B5A768E926CF9473004B8C4D /* StockDetailsViewController.swift in Sources */,
+				B5A768F326CF965F004B8C4D /* WatchllistTableViewCell.swift in Sources */,
+				B5A768E326CF92FD004B8C4D /* PManager.swift in Sources */,
+				B5A768D926CF9176004B8C4D /* MarketDataResponse.swift in Sources */,
+				B5A768E526CF93E2004B8C4D /* SearchResultViewController.swift in Sources */,
+				B5A768DB26CF91B7004B8C4D /* MetricsResponse.swift in Sources */,
+				B5A768E726CF942B004B8C4D /* NewsViewController.swift in Sources */,
+				B5A768ED26CF95D1004B8C4D /* NewsHeaderView.swift in Sources */,
+				B52485AB26CF893500B246CB /* WatchListViewController.swift in Sources */,
+				B5A768EF26CF9603004B8C4D /* NewsStoryTableViewCell.swift in Sources */,
+				B5A768F526CF968E004B8C4D /* StockChartView.swift in Sources */,
 				B52485A726CF893500B246CB /* AppDelegate.swift in Sources */,
+				B5A768EB26CF953C004B8C4D /* Extensions.swift in Sources */,
+				B5A768DF26CF923E004B8C4D /* SearchRespone.swift in Sources */,
+				B5A768E126CF9280004B8C4D /* APIBase.swift in Sources */,
+				B5A768F126CF962F004B8C4D /* SearchTableViewCell.swift in Sources */,
+				B5A768DD26CF9210004B8C4D /* NewsStory.swift in Sources */,
 				B52485A926CF893500B246CB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,14 +310,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B52485AC26CF893500B246CB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B52485AD26CF893500B246CB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B52485B126CF893800B246CB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -283,12 +439,14 @@
 		};
 		B52485B826CF893800B246CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF752CF88E64A340633CCB80 /* Pods-NewsStocksApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AUT992AC64;
 				INFOPLIST_FILE = NewsStocksApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,18 +454,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = antontuzov.NewsStocksApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		B52485B926CF893800B246CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BD0630846982E28E2B8C11C /* Pods-NewsStocksApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AUT992AC64;
 				INFOPLIST_FILE = NewsStocksApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +475,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = antontuzov.NewsStocksApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
