@@ -14,6 +14,12 @@ class WatchListViewController: UIViewController {
     
     
     
+    private var searchTimer: Timer?
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -51,19 +57,49 @@ class WatchListViewController: UIViewController {
 
 }
 
-extension WatchListViewController:  UISearchResultsUpdating {
+extension WatchListViewController: UISearchResultsUpdating {
     
+    
+  
+
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let query = searchController.searchBar.text,
-              let resultVC = searchController.searchResultsController as?
-                SearchResultViewController,
+              let resultsVC = searchController.searchResultsController as? SearchResultViewController,
+              
               !query.trimmingCharacters(in: .whitespaces).isEmpty else {
-            
             return
         }
-        print(query)
+        
+//        reset timer
+        searchTimer?.invalidate()
+        
+        
+        searchTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in
+            
+            APIBase.shared.search(query: query) { result  in
+                switch result {
+                case .success(let response):
+                    DispatchQueue.main.async {
+                        resultsVC.update(with: response.result)
+                    }
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        resultsVC.update(with: [])
+                    }
+                print(error)
+                }
+            }
+            
+        })
+        
+        
+//        call out api here
+//        resultsVC.update(with: ["foo"])
+        
+        
     }
+    
     
     
     
@@ -73,7 +109,7 @@ extension WatchListViewController:  UISearchResultsUpdating {
 extension WatchListViewController: SearchResultViewControllerDelegate {
     
     func searchResultViewControllerDidSelect(searchResult: SResult) {
-       
+        print("Did select\(searchResult.displaySymbol)")
     }
   
     

@@ -13,7 +13,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+     
+//                APIBase.shared.search(query: "Apple") { result in
+//                    switch result {
+//                    case .success(let response):
+//                        print(response.result)
+//                    case .failure(let error):
+//                        print(error)
+//                    }
+//                }
+        //
+        //        APIBase.shared.news(for: .compan(symbol: "MSFT")) { result in
+        //            switch result {
+        //            case .success(let news):
+        //                print(news.count)
+        //            case .failure: break
+        //            }
+        //        }
+                
+
+        //        APIBase.shared.marketData(for: "AAPL") { result in
+        //            switch result {
+        //            case .success(let data):
+        //                let candleSticks = data.candleSticks
+        //            case .failure(let error):
+        //                print(error)
+        //            }
+        //
+        //
+        //
+        //
+        //
+        //        }
+
+        
+        
+        
+        
+        
+        
+        
+        
         return true
     }
 
