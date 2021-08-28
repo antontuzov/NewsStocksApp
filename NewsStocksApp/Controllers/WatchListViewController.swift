@@ -60,16 +60,18 @@ class WatchListViewController: UIViewController {
     
     
     
+    
     private func setUpFlotingPanel() {
-            let vc = NewsViewController()
-            let panels = FloatingPanelController(delegate: self)
-            panels.surfaceView.backgroundColor = .secondarySystemBackground
-            panels.set(contentViewController: vc)
-//            panels.track(scrollView: vc)
-            panels.addPanel(toParent: self)
-           
-     
-        }
+        let vc = NewsViewController(type: .topStories)
+           let panels = FloatingPanelController(delegate: self)
+           panels.surfaceView.backgroundColor = .secondarySystemBackground
+           panels.set(contentViewController: vc)
+           panels.track(scrollView: vc.tableView)
+           panels.addPanel(toParent: self)
+
+       }
+    
+    
         
     
     
@@ -154,11 +156,13 @@ extension WatchListViewController: SearchResultViewControllerDelegate {
 
 extension WatchListViewController: FloatingPanelControllerDelegate {
     
-    
-    
-    func floatingPanelDidChangePosition(_ fpc: FloatingPanelController) {
+    func floatingPanelDidChangeState(_ fpc: FloatingPanelController) {
         navigationItem.titleView?.isHidden = fpc.state == .full
     }
+    
+//    func floatingPanelDidChangePosition(_ fpc: FloatingPanelController) {
+//        navigationItem.titleView?.isHidden = fpc.state == .full
+//    }
     
 }
 

@@ -40,36 +40,36 @@ final class APIBase {
 
     }
 
-//    public func news(for type: NewsViewController.`Type`,
-//                     completion: @escaping (Result<[NewsStory], Error>) -> Void) {
-//
-////         let url = url(for: .topStories, queryPorams: ["category":"general"])
-//
-////        request(url: url(for: .topStories, queryPorams: ["category":"general"]),
-////                expecting: [NewsStory].self, completion: completion)
-//
-//
-//        switch type {
-//        case .topStories:
-//            request(url: url(for: .topStories, queryPorams: ["category":"general"]),
-//                    expecting: [NewsStory].self, completion: completion)
-//
-//        case .compan(let symbol):
-//            let today = Date()
-//            let oneMonthBack = today.addingTimeInterval(-(Constants.day * 7))
-//
-//            request(url: url(for: .companyNews,
-//                             queryPorams: ["symbol": symbol,
-//                                           "from": DateFormatter.newsDateFormatter.string(from: oneMonthBack),
-//                                           "to": DateFormatter.newsDateFormatter.string(from: today)
-//                             ]),
-//                    expecting: [NewsStory].self, completion: completion)
-//        }
-//
-//
-//
-//
-//    }
+    public func news(for type: NewsViewController.`Type`,
+                     completion: @escaping (Result<[NewsStory], Error>) -> Void) {
+
+//         let url = url(for: .topStories, queryPorams: ["category":"general"])
+
+//        request(url: url(for: .topStories, queryPorams: ["category":"general"]),
+//                expecting: [NewsStory].self, completion: completion)
+
+
+        switch type {
+        case .topStories:
+            request(url: url(for: .topStories, queryPorams: ["category":"general"]),
+                    expecting: [NewsStory].self, completion: completion)
+
+        case .compan(let symbol):
+            let today = Date()
+            let oneMonthBack = today.addingTimeInterval(-(Constants.day * 7))
+
+            request(url: url(for: .companyNews,
+                             queryPorams: ["symbol": symbol,
+                                           "from": DateFormatter.newsDateFormatter.string(from: oneMonthBack),
+                                           "to": DateFormatter.newsDateFormatter.string(from: today)
+                             ]),
+                    expecting: [NewsStory].self, completion: completion)
+        }
+
+
+
+
+    }
     
     
     
