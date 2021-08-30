@@ -100,7 +100,18 @@ final class APIBase {
     }
     
     
-    
+    public func financMetrics(for symbol: String, completion: @escaping (Result<MetricsResponse,Error>) -> Void) {
+          
+          let url = url(for: .financials, queryPorams: ["symbol": symbol, "metric": "all"])
+          
+          
+          request(url: url, expecting: MetricsResponse.self, completion: completion)
+          
+          
+          
+          
+          
+      }
     
     
     
@@ -111,6 +122,7 @@ final class APIBase {
         case topStories = "news"
         case companyNews = "company-news"
         case marketData = "stock/candle"
+        case financials = "stock/metric"
     }
     
     private enum APIError: Error {

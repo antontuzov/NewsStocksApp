@@ -31,10 +31,7 @@ class NewsHeaderView: UITableViewHeaderFooterView {
     struct ViewModel {
         let title: String
         let showAddButton: Bool
-        
-        
-        
-        
+       
     }
     
     lazy var label: UILabel = {
