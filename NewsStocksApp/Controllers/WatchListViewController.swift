@@ -37,6 +37,7 @@ class WatchListViewController: UIViewController {
         setupTitleView()
         setUpTableView()
         setUpFlotingPanel()
+        setUpWatchlistData()
         
     }
     
@@ -59,6 +60,17 @@ class WatchListViewController: UIViewController {
     
     
     
+//    private func setUpSerchController(){
+//            let resultVC = SearchResultViewController()
+//            resultVC.delegate = self
+//            let searchVC = UISearchController(searchResultsController: resultVC)
+//            searchVC.searchResultsUpdater = self
+//            navigationItem.searchController = searchVC
+//        }
+    
+    
+    
+    
     private func setUpSerchController(){
             let resultVC = SearchResultViewController()
             resultVC.delegate = self
@@ -66,6 +78,120 @@ class WatchListViewController: UIViewController {
             searchVC.searchResultsUpdater = self
             navigationItem.searchController = searchVC
         }
+        
+        
+        private func setUpWatchlistData() {
+            let symbols = PManager.shared.watchList
+            
+            let group = DispatchGroup()
+            
+            
+            for symbol in symbols where watchlistMap[symbol] == nil {
+                group.enter()
+                
+    //
+    //            watchlistMap[symbol] = "Some string "
+                APIBase.shared.marketData(for: symbol) { [weak self] result in
+                    defer {
+                        group.leave()
+                    }
+                                switch result {
+                                case .success(let data):
+                                    let candleSticks = data.candleSticks
+                                    self?.watchlistMap[symbol] = candleSticks
+                                case .failure(let error):
+                                    print(error)
+                                }
+                    
+                    
+                    
+                    
+                    
+                }
+                
+            }
+                
+                
+                
+                
+            group.notify(queue: .main) { [weak self] in
+                self?.createViewModel()
+                self?.tableView.reloadData()
+            }
+            
+        }
+        
+        private func createViewModel() {
+            var viewModels = [WatchllistTableViewCell.viewModel]()
+            for (symbol, candleSticks) in watchlistMap {
+                let changePerce = getChangPerce(symbol: symbol, data: candleSticks)
+                viewModels.append(.init(symbol: symbol,
+                                        companyName: UserDefaults.standard.string(forKey: symbol) ?? "Company",
+                                        price: getLatestPrice(from: candleSticks),
+                                        changeColor: changePerce < 0 ? .systemRed : .systemGreen,
+                                        changePre: .percentage(from: changePerce), chardViewModel: .init(data:
+                                                                                                         candleSticks.reversed().map  {$0.close},
+                                                                                                         showLegend: false,
+                                                                                                         showAxis: false)))
+            }
+            
+            
+    //        print("\n\n\(viewModels)\n\n")
+            
+            self.viewModels = viewModels
+            
+        }
+        
+        
+        private func getChangPerce(symbol: String, data: [CandleStick]) -> Double {
+            let latestDate = data[0].date
+            guard let latestClose = data.first?.close,
+                  let priorClose = data.first(where: { !Calendar.current.isDate($0.date , inSameDayAs: latestDate)
+                    
+                  })?.close   else {
+                
+                
+                return 0
+                
+            }
+            
+            
+            
+
+            let diff = 1 - (priorClose/latestClose)
+            
+    //        print("\(symbol): \(diff)%")
+            
+            return diff
+        }
+        
+        
+        
+        
+    //    let priorDate = Date().addingTimeInterval(-((3600 * 24) * 2))
+        
+        
+        
+        
+        
+        
+        private func getLatestPrice(from data: [CandleStick]) -> String {
+            guard let closingPrice = data.first?.close else {
+                return ""
+      
+            }
+            return .formatted(number: closingPrice)
+            
+        }
+        
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
