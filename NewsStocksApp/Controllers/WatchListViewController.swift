@@ -30,6 +30,9 @@ class WatchListViewController: UIViewController {
        }()
     
     
+    private var observer: NSObjectProtocol?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -39,7 +42,29 @@ class WatchListViewController: UIViewController {
         setUpFlotingPanel()
         setUpWatchlistData()
         
+        setUpObserver()
     }
+    
+    
+    
+    
+    private func  setUpObserver(){
+           observer = NotificationCenter.default.addObserver(forName: .didAddToWotchList,
+                                                             object: nil,
+                                                             queue: .main, using: { [weak self] _ in
+                                                               self?.viewModels.removeAll()
+                                                               self?.setUpWatchlistData()
+                                                             })
+           
+       }
+       
+    
+    
+    
+    
+    
+    
+    
     
     
     private func setupTitleView() {

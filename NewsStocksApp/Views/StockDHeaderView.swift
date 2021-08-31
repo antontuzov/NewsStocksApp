@@ -10,6 +10,8 @@ import UIKit
 
 class StockDHeaderView: UIView,UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
   
+    
+    
     private var metricViewModels:[MetricCollectionViewCell.ViewModel] = []
 
 //     Subviews
@@ -58,13 +60,13 @@ class StockDHeaderView: UIView,UICollectionViewDelegate, UICollectionViewDataSou
     func configure(
         chartViewModel: StockChartView.viewModel,
         metricViewModels: [MetricCollectionViewCell.ViewModel]) {
-        
+
         self.metricViewModels = metricViewModels
         collectionView.reloadData()
-        
-        
-        
-        
+
+
+
+
     }
     
     
