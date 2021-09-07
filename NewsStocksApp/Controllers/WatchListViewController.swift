@@ -18,7 +18,7 @@ class WatchListViewController: UIViewController {
     private var searchTimer: Timer?
     private var panel: FloatingPanelController?
     static var maxWidth: CGFloat = 0
-    private var viewModels: [WatchllistTableViewCell.viewModel] = []
+    private var viewModels: [WatchllistTableViewCell.PriceViewModel] = []
     private var watchlistMap: [String: [CandleStick]] = [:]
     
     //   MARK: - lifecycle
@@ -41,7 +41,6 @@ class WatchListViewController: UIViewController {
         setUpTableView()
         setUpFlotingPanel()
         setUpWatchlistData()
-        
         setUpObserver()
     }
     
@@ -147,7 +146,7 @@ class WatchListViewController: UIViewController {
         }
         
         private func createViewModel() {
-            var viewModels = [WatchllistTableViewCell.viewModel]()
+            var viewModels = [WatchllistTableViewCell.PriceViewModel]()
             for (symbol, candleSticks) in watchlistMap {
                 let changePerce = getChangPerce(symbol: symbol, data: candleSticks)
                 viewModels.append(.init(symbol: symbol,

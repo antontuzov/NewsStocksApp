@@ -12,7 +12,7 @@ class StockDHeaderView: UIView,UICollectionViewDelegate, UICollectionViewDataSou
   
     
     
-    private var metricViewModels:[MetricCollectionViewCell.ViewModel] = []
+    private var metricViewModels:[MetricCollectionViewCell.MetricViewModel] = []
 
 //     Subviews
     private let chartView = StockChartView()
@@ -24,7 +24,7 @@ class StockDHeaderView: UIView,UICollectionViewDelegate, UICollectionViewDataSou
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
-//        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(MetricCollectionViewCell.self,
                                 forCellWithReuseIdentifier: MetricCollectionViewCell.identifier)
@@ -51,20 +51,18 @@ class StockDHeaderView: UIView,UICollectionViewDelegate, UICollectionViewDataSou
     override func layoutSubviews() {
         super.layoutSubviews()
         chartView.frame = CGRect(x: 0, y: 0, width: width, height: height-100)
-        collectionView.frame = CGRect(x: 0, y: height-100, width: width, height: 100)
+        collectionView.frame = CGRect(x: 0, y: height-200, width: width, height: 100)
     }
 
     
     
     
     func configure(
-        chartViewModel: StockChartView.viewModel,
-        metricViewModels: [MetricCollectionViewCell.ViewModel]) {
+        chartViewModel: StockChartView.StockviewModel,
+        metricViewModels: [MetricCollectionViewCell.MetricViewModel]) {
 
         self.metricViewModels = metricViewModels
         collectionView.reloadData()
-
-
 
 
     }
@@ -72,10 +70,6 @@ class StockDHeaderView: UIView,UICollectionViewDelegate, UICollectionViewDataSou
     
     
 //     MARK: - CollectionView
-    
-    
-    
-    
     
     
     

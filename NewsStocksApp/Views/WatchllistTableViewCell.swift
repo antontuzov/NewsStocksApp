@@ -22,13 +22,13 @@ class WatchllistTableViewCell: UITableViewCell {
     static let prffHight: CGFloat = 60
     
     
-    struct viewModel {
+    struct PriceViewModel {
         let symbol: String
         let companyName: String
         let price: String
         let changeColor: UIColor
         let changePre: String
-        let chardViewModel: StockChartView.viewModel
+        let chardViewModel: StockChartView.StockviewModel
     }
     
     
@@ -164,7 +164,7 @@ class WatchllistTableViewCell: UITableViewCell {
     }
     
     
-    public func configure(with viewModel:  viewModel) {
+    public func configure(with viewModel:  PriceViewModel) {
         symbolLable.text = viewModel.symbol
         nameLable.text = viewModel.companyName
         priceLable.text = viewModel.price

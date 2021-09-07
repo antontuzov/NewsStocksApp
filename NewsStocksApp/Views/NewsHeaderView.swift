@@ -12,13 +12,8 @@ import UIKit
 
 protocol NewsHeaderViewDelegate: AnyObject {
     func NewsHeaderViewDidTapAddButton(_ headerView: NewsHeaderView)
-    
-    
-    
+   
 }
-
-
-
 
 
 class NewsHeaderView: UITableViewHeaderFooterView {
@@ -36,7 +31,7 @@ class NewsHeaderView: UITableViewHeaderFooterView {
     
     lazy var label: UILabel = {
         let label = UILabel()
-        label.font =    .boldSystemFont(ofSize: 32)
+        label.font = .boldSystemFont(ofSize: 32)
         
         
         return label

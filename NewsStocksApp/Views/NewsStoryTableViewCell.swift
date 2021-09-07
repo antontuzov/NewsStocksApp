@@ -18,7 +18,7 @@ class NewsStoryTableViewCell: UITableViewCell {
     static let prefHeight: CGFloat = 140
     
     
-    struct viewModel {
+    struct NewsViewModel {
         let source: String
         let headline:String
         let dataString:String
@@ -37,6 +37,7 @@ class NewsStoryTableViewCell: UITableViewCell {
     lazy var sourceLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12, weight: .medium)
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -44,6 +45,7 @@ class NewsStoryTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 24, weight: .bold)
         label.numberOfLines = 3
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -53,6 +55,7 @@ class NewsStoryTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 12, weight: .light)
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -63,6 +66,7 @@ class NewsStoryTableViewCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFit
         imageView.layer.cornerRadius = 8
         imageView.layer.masksToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
@@ -84,35 +88,87 @@ class NewsStoryTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let imageSize: CGFloat = contentView.height/1.2
-        storyImageView.frame = CGRect(
-            x: contentView.width - imageSize-10,
-            y: (contentView.height - imageSize) - 2,
-            width: imageSize,
-            height: imageSize)
+//        let imageSize: CGFloat = contentView.height/1.2
+//        storyImageView.frame = CGRect(
+//            x: contentView.width - imageSize-10,
+//            y: (contentView.height - imageSize) - 2,
+//            width: imageSize,
+//            height: imageSize)
+//
+//
+//        let avalibalWidth: CGFloat = contentView.width - separatorInset.left - imageSize - 15
+//
+//        dateLabel.frame = CGRect(
+//            x: separatorInset.left,
+//            y: contentView.height - 40,
+//            width: avalibalWidth,
+//            height: 40)
+//
+//
+//
+//        sourceLabel.sizeToFit()
+//        sourceLabel.frame = CGRect(
+//            x: separatorInset.left,
+//            y: 4,
+//            width: avalibalWidth,
+//            height: sourceLabel.height)
+//        headLineLabel.frame = CGRect(
+//            x: separatorInset.left,
+//            y: sourceLabel.bottom + 2 ,
+//            width: avalibalWidth,
+//            height: contentView.height - sourceLabel.bottom - dateLabel.height - 5)
         
         
-        let avalibalWidth: CGFloat = contentView.width - separatorInset.left - imageSize - 15
         
-        dateLabel.frame = CGRect(
-            x: separatorInset.left,
-            y: contentView.height - 40,
-            width: avalibalWidth,
-            height: 40)
+        NSLayoutConstraint.activate([
+        
+            storyImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            storyImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+            storyImageView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            storyImageView.heightAnchor.constraint(equalToConstant: 150),
+            storyImageView.widthAnchor.constraint(equalToConstant: 140)
+        
+        
+        ])
         
         
         
-        sourceLabel.sizeToFit()
-        sourceLabel.frame = CGRect(
-            x: separatorInset.left,
-            y: 4,
-            width: avalibalWidth,
-            height: sourceLabel.height)
-        headLineLabel.frame = CGRect(
-            x: separatorInset.left,
-            y: sourceLabel.bottom + 2 ,
-            width: avalibalWidth,
-            height: contentView.height - sourceLabel.bottom - dateLabel.height - 5)
+        NSLayoutConstraint.activate([
+        
+//            dateLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+//            dateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+//            dateLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+//            dateLabel.heightAnchor.constraint(equalToConstant: 150),
+//            dateLabel.widthAnchor.constraint(equalToConstant: 150)
+        
+        
+        ])
+        
+        
+        NSLayoutConstraint.activate([
+        
+            sourceLabel.leadingAnchor.constraint(equalTo: storyImageView.leadingAnchor, constant: 5),
+//            sourceLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+            sourceLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+//            sourceLabel.heightAnchor.constraint(equalToConstant: 150),
+//            sourceLabel.widthAnchor.constraint(equalToConstant: 150)
+        
+        
+        ])
+        
+        
+        NSLayoutConstraint.activate([
+        
+            headLineLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            headLineLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+            headLineLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            headLineLabel.heightAnchor.constraint(equalToConstant: 150),
+            headLineLabel.widthAnchor.constraint(equalToConstant: 150)
+        
+        
+        ])
+        
+        
         
         
         
@@ -126,7 +182,7 @@ class NewsStoryTableViewCell: UITableViewCell {
         storyImageView.image = nil
     }
     
-    public func configure(with viewModel: viewModel ) {
+    public func configure(with viewModel: NewsViewModel ) {
         headLineLabel.text = viewModel.headline
         sourceLabel.text = viewModel.source
         dateLabel.text = viewModel.dataString

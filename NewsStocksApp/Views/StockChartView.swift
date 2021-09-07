@@ -11,7 +11,7 @@ class StockChartView: UIView {
 
     //    MARK: Render
 
-        struct viewModel {
+        struct StockviewModel {
             let data: [Double]
             let showLegend: Bool
             let showAxis: Bool
@@ -39,7 +39,7 @@ class StockChartView: UIView {
         }
         
         
-        func configure(with viewModel: viewModel) {
+        func configure(with viewModel: StockviewModel) {
             
             
             

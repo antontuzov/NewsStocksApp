@@ -168,7 +168,7 @@ class StockDetailsViewController: UIViewController {
 
 //        headerView.backgroundColor = .link
 
-    var viewModels = [MetricCollectionViewCell.ViewModel]()
+    var viewModels = [MetricCollectionViewCell.MetricViewModel]()
     if let metrics = metrics {
         viewModels.append(.init(name: "52W high", value: "\(String(describing: metrics.AnnualWeekHigh))"))
         viewModels.append(.init(name: "52L high", value: "\(String(describing: metrics.AnnualWeekLow))"))

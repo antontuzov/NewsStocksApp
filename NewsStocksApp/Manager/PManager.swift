@@ -47,7 +47,7 @@ final class PManager {
         
         userDefaults.set(companyName, forKey: symbol)
         
-//        NotificationCenter.default.post(name: .didAddToWotchList, object: nil)
+        NotificationCenter.default.post(name: .didAddToWotchList, object: nil)
         
     }
     

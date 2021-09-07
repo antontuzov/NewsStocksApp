@@ -11,7 +11,7 @@ class MetricCollectionViewCell: UICollectionViewCell {
     static let identifier = "MetricCollectionViewCell"
     
     
-    struct ViewModel {
+    struct MetricViewModel {
         let name: String
         let value: String
     }
@@ -63,8 +63,8 @@ class MetricCollectionViewCell: UICollectionViewCell {
     }
     
     
-    func configure(with viewModel: ViewModel) {
-        nameLable.text = viewModel.name
+    func configure(with viewModel: MetricViewModel) {
+        nameLable.text = viewModel.name+":"
         valueLable.text = viewModel.value
     }
     
