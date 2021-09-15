@@ -119,56 +119,48 @@ class NewsStoryTableViewCell: UITableViewCell {
 //            height: contentView.height - sourceLabel.bottom - dateLabel.height - 5)
         
         
-        
+
         NSLayoutConstraint.activate([
-        
+
             storyImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            storyImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
-            storyImageView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            storyImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             storyImageView.heightAnchor.constraint(equalToConstant: 150),
             storyImageView.widthAnchor.constraint(equalToConstant: 140)
-        
-        
+
+
         ])
-        
-        
-        
+
+
+
         NSLayoutConstraint.activate([
-        
-//            dateLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-//            dateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
-//            dateLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-//            dateLabel.heightAnchor.constraint(equalToConstant: 150),
-//            dateLabel.widthAnchor.constraint(equalToConstant: 150)
-        
-        
+
+            dateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
+            dateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
+
+
+
         ])
-        
-        
+
+
         NSLayoutConstraint.activate([
-        
-            sourceLabel.leadingAnchor.constraint(equalTo: storyImageView.leadingAnchor, constant: 5),
-//            sourceLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
-            sourceLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-//            sourceLabel.heightAnchor.constraint(equalToConstant: 150),
-//            sourceLabel.widthAnchor.constraint(equalToConstant: 150)
-        
-        
+
+            sourceLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
+            sourceLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5)
+
+
         ])
-        
-        
+
+
         NSLayoutConstraint.activate([
-        
-            headLineLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            headLineLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
-            headLineLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            headLineLabel.heightAnchor.constraint(equalToConstant: 150),
-            headLineLabel.widthAnchor.constraint(equalToConstant: 150)
-        
-        
+
+            headLineLabel.leadingAnchor.constraint(equalTo:  storyImageView.trailingAnchor, constant: 7),
+            headLineLabel.topAnchor.constraint(equalTo: sourceLabel.bottomAnchor, constant: 8),
+            headLineLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
+            
+
         ])
-        
-        
+
+
         
         
         
