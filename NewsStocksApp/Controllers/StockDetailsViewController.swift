@@ -26,7 +26,7 @@ class StockDetailsViewController: UIViewController {
         table.register(NewsHeaderView.self,
                        forHeaderFooterViewReuseIdentifier: NewsHeaderView.identifier)
         table.register(NewsStoryTableViewCell.self,
-                       forCellReuseIdentifier: NewsStoryTableViewCell.identifier)
+                       forCellReuseIdentifier: "NewsStoryTableViewCell")
         return table
     }()
     
@@ -203,7 +203,7 @@ extension StockDetailsViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsStoryTableViewCell.identifier,
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsStoryTableViewCell",
                                                        for: indexPath) as? NewsStoryTableViewCell else {
             fatalError()
         }

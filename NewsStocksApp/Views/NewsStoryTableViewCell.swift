@@ -12,7 +12,7 @@ import SDWebImage
 
 
 class NewsStoryTableViewCell: UITableViewCell {
-      static let identifier = "NewsStoryTableViewCell"
+//      static let identifier = "NewsStoryTableViewCell"
     
     
     static let prefHeight: CGFloat = 140

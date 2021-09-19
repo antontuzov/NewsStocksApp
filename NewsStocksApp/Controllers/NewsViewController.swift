@@ -43,7 +43,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let table  = UITableView()
         
         
-        table.register(NewsStoryTableViewCell.self, forCellReuseIdentifier: NewsStoryTableViewCell.identifier)
+        table.register(NewsStoryTableViewCell.self, forCellReuseIdentifier: "NewsStoryTableViewCell")
         table.register(NewsHeaderView.self,
                        forHeaderFooterViewReuseIdentifier: NewsHeaderView.identifier)
         table.backgroundColor = .clear
@@ -138,7 +138,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier:  NewsStoryTableViewCell.identifier,
+        guard let cell = tableView.dequeueReusableCell(withIdentifier:  "NewsStoryTableViewCell",
                                                        for: indexPath) as? NewsStoryTableViewCell else { fatalError() }
         cell.configure(with: .init(model: stories[indexPath.row]))
         return cell
