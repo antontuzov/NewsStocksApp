@@ -8,7 +8,7 @@
 import UIKit
 
 class MetricCollectionViewCell: UICollectionViewCell {
-    static let identifier = "MetricCollectionViewCell"
+//    static let identifier = "MetricCollectionViewCell"
     
     
     struct MetricViewModel {

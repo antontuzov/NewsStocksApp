@@ -25,7 +25,7 @@ class WatchListViewController: UIViewController {
        private lazy var tableView: UITableView = {
            let table = UITableView()
            table.register(WatchllistTableViewCell.self,
-                          forCellReuseIdentifier: WatchllistTableViewCell.identifier)
+                          forCellReuseIdentifier: "WatchllistTableViewCell")
            return table
        }()
     
@@ -348,7 +348,7 @@ extension WatchListViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: WatchllistTableViewCell.identifier,
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "WatchllistTableViewCell",
                                                        for: indexPath) as? WatchllistTableViewCell else {
             
             fatalError()

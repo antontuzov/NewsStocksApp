@@ -14,7 +14,7 @@ final class PManager {
     private let userDefaults: UserDefaults = .standard
     
     private struct Constants {
-        static let  onBoardedKey = "hasOnBord"
+        static let  onBoardedKey = "hasOnBorded"
         static let watchListkey = "watchList"
     }
     
@@ -28,12 +28,12 @@ final class PManager {
  //    MARK: - Public
     
    public var watchList: [String] {
-    if !hasOnBord {
-        userDefaults.set(true, forKey: Constants.onBoardedKey)
+    if !hasOnBorded {
+        userDefaults.set(true, forKey: "hasOnBorded")
         setUpDefaults()
     }
 
-    return userDefaults.stringArray(forKey: Constants.watchListkey) ?? []
+    return userDefaults.stringArray(forKey: "watchList") ?? []
     
     }
     
@@ -70,7 +70,8 @@ final class PManager {
     
     //    MARK: - Private
     
-    private var hasOnBord: Bool {
+    private var hasOnBorded: Bool {
+        
         
         return userDefaults.bool(forKey: Constants.onBoardedKey)
         
@@ -92,10 +93,10 @@ final class PManager {
         ]
         
         let symbols = map.keys.map { $0 }
-        userDefaults.set(symbols, forKey: Constants.watchListkey)
+        userDefaults.set(symbols, forKey: "watchList")
         
-        for (symbols, name) in map {
-            userDefaults.set(name, forKey: symbols)
+        for (symbol, name) in map {
+            userDefaults.set(name, forKey: symbol)
             
             
             

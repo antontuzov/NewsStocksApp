@@ -27,7 +27,7 @@ class StockDHeaderView: UIView,UICollectionViewDelegate, UICollectionViewDataSou
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(MetricCollectionViewCell.self,
-                                forCellWithReuseIdentifier: MetricCollectionViewCell.identifier)
+                                forCellWithReuseIdentifier: "MetricCollectionViewCell")
         
         collectionView.backgroundColor = .secondarySystemBackground
         return collectionView
@@ -81,7 +81,7 @@ class StockDHeaderView: UIView,UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let viewModel = metricViewModels[indexPath.row]
         guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: MetricCollectionViewCell.identifier, for: indexPath) as? MetricCollectionViewCell else {
+                withReuseIdentifier: "MetricCollectionViewCell", for: indexPath) as? MetricCollectionViewCell else {
             fatalError()
         }
         cell.configure(with: viewModel)

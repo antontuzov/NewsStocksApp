@@ -14,7 +14,7 @@ protocol WatchllistTableViewCellDelegate: AnyObject {
 
 
 class WatchllistTableViewCell: UITableViewCell {
-    static let identifier = "WatchllistTableViewCell"
+//    static let identifier = "WatchllistTableViewCell"
     
     weak var delegate: WatchllistTableViewCellDelegate?
     

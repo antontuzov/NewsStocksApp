@@ -9,14 +9,8 @@ import UIKit
 import SafariServices
 
 
-
-
-
 class NewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-   
-    
-    
-    
+ 
     
     enum `Type` {
         case topStories
@@ -31,18 +25,18 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 return symbol.uppercased()
                 
             }
-            
-            
+           
         }
-        
-        
+     
     }
+    
+    
+    
     
     
     lazy var tableView: UITableView = {
         let table  = UITableView()
-        
-        
+
         table.register(NewsStoryTableViewCell.self, forCellReuseIdentifier: "NewsStoryTableViewCell")
         table.register(NewsHeaderView.self,
                        forHeaderFooterViewReuseIdentifier: NewsHeaderView.identifier)
@@ -60,10 +54,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     private var stories = [NewsStory]()
 
     private let type: Type
-    
-    
-    
-    
+ 
     //    MARK: -init
     init(type: Type) {
         self.type = type
@@ -79,8 +70,6 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
         setUpTable()
         fetchNews()
         
@@ -115,8 +104,6 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
             print(error)
             }
         }
-        
-        
     }
     
     
