@@ -70,6 +70,7 @@ class WatchllistTableViewCell: UITableViewCell {
     private let miniChartView: StockChartView = {
         let chart = StockChartView()
 //        chart.backgroundColor = .link
+        chart.isUserInteractionEnabled = false
         chart.clipsToBounds = true
         
         
@@ -170,6 +171,11 @@ class WatchllistTableViewCell: UITableViewCell {
         priceLable.text = viewModel.price
         changeLable.text = viewModel.changePre
         changeLable.backgroundColor = viewModel.changeColor
+    
+        miniChartView.configure(with: viewModel.chardViewModel)
+        
+        
+        
         
     }
     

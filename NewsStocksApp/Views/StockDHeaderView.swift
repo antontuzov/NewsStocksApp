@@ -24,12 +24,12 @@ class StockDHeaderView: UIView,UICollectionViewDelegate, UICollectionViewDataSou
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(MetricCollectionViewCell.self,
                                 forCellWithReuseIdentifier: "MetricCollectionViewCell")
         
-        collectionView.backgroundColor = .secondarySystemBackground
+        collectionView.backgroundColor = .yellow
         return collectionView
     }()
     
@@ -51,7 +51,7 @@ class StockDHeaderView: UIView,UICollectionViewDelegate, UICollectionViewDataSou
     override func layoutSubviews() {
         super.layoutSubviews()
         chartView.frame = CGRect(x: 0, y: 0, width: width, height: height-100)
-        collectionView.frame = CGRect(x: 0, y: height-200, width: width, height: 100)
+        collectionView.frame = CGRect(x: 0, y: height-50, width: width, height: 50)
     }
 
     
@@ -61,16 +61,18 @@ class StockDHeaderView: UIView,UICollectionViewDelegate, UICollectionViewDataSou
         chartViewModel: StockChartView.StockviewModel,
         metricViewModels: [MetricCollectionViewCell.MetricViewModel]) {
 
+        
+        
+        chartView.configure(with: chartViewModel)
+        
         self.metricViewModels = metricViewModels
         collectionView.reloadData()
 
 
     }
-    
-    
+  
     
 //     MARK: - CollectionView
-    
     
     
     

@@ -147,11 +147,7 @@ final class APIBase {
             
         }
         
-        
-        
-        
-        
-        
+       
         queryItems.append(.init(name: "token", value: Constants.apikey))
         
         

@@ -64,7 +64,7 @@ class StockDetailsViewController: UIViewController {
         title = companyName
         setUpCloseButton()
         setUpTable()
-//        fetchFanData()
+        fetchFinData()
         fetchNews()
         
       
@@ -103,13 +103,28 @@ class StockDetailsViewController: UIViewController {
   
     
 
-    private func  fetchFanData() {
+    private func  fetchFinData() {
         let group = DispatchGroup()
 
 
         if candleStickData.isEmpty {
             group.enter()
-
+            APIBase.shared.marketData(for: symbol) { [weak self] result in
+                defer {
+                    group.leave()
+                }
+                
+                switch result {
+                case .success(let respons):
+                    self?.candleStickData = respons.candleSticks
+                case .failure(let error):
+                    print(error)
+                }
+            }
+            
+            
+            
+            
         }
 
 
@@ -160,6 +175,28 @@ class StockDetailsViewController: UIViewController {
         
     }
     
+    
+    private func getChangPerce(symbol: String, data: [CandleStick]) -> Double {
+        let latestDate = data[0].date
+        guard let latestClose = data.first?.close,
+              let priorClose = data.first(where: { !Calendar.current.isDate($0.date , inSameDayAs: latestDate)
+                
+              })?.close   else {
+            
+            
+            return 0
+            
+        }
+        
+        let diff = 1 - (priorClose/latestClose)
+        return diff
+        
+
+    }
+    
+    
+    
+    
 
    private func renderChart() {
     let headerView = StockDHeaderView(frame: CGRect(x: 0, y: 0,
@@ -179,8 +216,16 @@ class StockDetailsViewController: UIViewController {
 
 
 
-
-    headerView.configure(chartViewModel: .init(data: [], showLegend: false, showAxis: false),
+   let change = getChangPerce(symbol: symbol, data: candleStickData)
+    
+    
+    
+    
+    headerView.configure(chartViewModel: .init(data: candleStickData.reversed().map { $0.close },
+                                               showLegend: true,
+                                               showAxis: true,
+                                               fillColor: change < 0 ? .systemRed : .systemGreen
+    ),
                          metricViewModels: viewModels)
 
 
@@ -190,6 +235,7 @@ class StockDetailsViewController: UIViewController {
 
     }
     
+   
     
 
 }
@@ -223,8 +269,8 @@ extension StockDetailsViewController: UITableViewDelegate, UITableViewDataSource
             
         }
         header.delegate = self
-//        header.configure(with: .init(title: symbol.uppercased(),
-//                                     showAddButton: !PManager.shared.watchListContains(symbol: symbol)))
+        header.configure(with: .init(title: symbol.uppercased(),
+                                     showAddButton: !PManager.shared.watchListContains(simbol: symbol)))
         return header
     }
     

@@ -37,7 +37,11 @@ final class PManager {
     
     }
     
-    
+    public func watchListContains(simbol: String) -> Bool{
+        return watchList.contains(simbol)
+        
+        
+    }
     
     
     public func addToWatchList(symbol: String, companyName: String){

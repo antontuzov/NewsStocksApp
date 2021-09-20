@@ -11,15 +11,8 @@ import UIKit
 //    MARK: -  notification
 extension Notification.Name {
     static let didAddToWotchList = Notification.Name ("didAddToWotchList")
-    
-    
-    
-    
+ 
 }
-
-
-
-
 
 
 
@@ -44,9 +37,6 @@ extension NumberFormatter {
     
     
 }
-
-
-
 
 
 
@@ -138,11 +128,7 @@ extension UIView {
             
         }
         
-        
     }
-    
-    
-    
     
     
 }
@@ -150,10 +136,7 @@ extension UIView {
 
 
 extension UIView {
-    
-    
-   
-    
+  
 //    MARK: - Framing
     
     var width: CGFloat {

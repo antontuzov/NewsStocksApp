@@ -19,7 +19,12 @@ class WatchListViewController: UIViewController {
     private var panel: FloatingPanelController?
     static var maxWidth: CGFloat = 0
     private var viewModels: [WatchllistTableViewCell.PriceViewModel] = []
+    
     private var watchlistMap: [String: [CandleStick]] = [:]
+    
+    
+    private var observer: NSObjectProtocol?
+    
     
     //   MARK: - lifecycle
        private lazy var tableView: UITableView = {
@@ -30,7 +35,7 @@ class WatchListViewController: UIViewController {
        }()
     
     
-    private var observer: NSObjectProtocol?
+   
     
     
     override func viewDidLoad() {
@@ -126,11 +131,7 @@ class WatchListViewController: UIViewController {
                                 case .failure(let error):
                                     print(error)
                                 }
-                    
-                    
-                    
-                    
-                    
+                     
                 }
                 
             }
@@ -156,7 +157,9 @@ class WatchListViewController: UIViewController {
                                         changePre: .percentage(from: changePerce), chardViewModel: .init(data:
                                                                                                          candleSticks.reversed().map  {$0.close},
                                                                                                          showLegend: false,
-                                                                                                         showAxis: false)))
+                                                                                                         showAxis: false,
+                                                                                                         fillColor: changePerce < 0 ? .systemRed : .systemGreen
+                                        )))
             }
             
             
@@ -194,11 +197,7 @@ class WatchListViewController: UIViewController {
         
     //    let priorDate = Date().addingTimeInterval(-((3600 * 24) * 2))
         
-        
-        
-        
-        
-        
+   
         private func getLatestPrice(from data: [CandleStick]) -> String {
             guard let closingPrice = data.first?.close else {
                 return ""
@@ -208,14 +207,7 @@ class WatchListViewController: UIViewController {
             
         }
         
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     
     
@@ -228,9 +220,7 @@ class WatchListViewController: UIViewController {
        }
        
     
-    
-    
-    
+
     
     
     private func setUpFlotingPanel() {
