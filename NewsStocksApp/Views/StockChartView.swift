@@ -19,6 +19,8 @@ class StockChartView: UIView {
             let fillColor: UIColor
             
         }
+    
+    
     lazy var chartView: LineChartView = {
         let chartView = LineChartView()
         chartView.pinchZoomEnabled = false
@@ -28,8 +30,7 @@ class StockChartView: UIView {
         chartView.leftAxis.enabled = false
         chartView.rightAxis.enabled = false
         chartView.legend.enabled = false
-        
-        
+
         return chartView
     }()
     

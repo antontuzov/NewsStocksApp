@@ -50,7 +50,7 @@ class StockDHeaderView: UIView,UICollectionViewDelegate, UICollectionViewDataSou
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        chartView.frame = CGRect(x: 0, y: 0, width: width, height: height-100)
+        chartView.frame = CGRect(x: 0, y: 0, width: width, height: height-50)
         collectionView.frame = CGRect(x: 0, y: height-50, width: width, height: 50)
     }
 
