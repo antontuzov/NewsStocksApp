@@ -1,6 +1,6 @@
 ### Stocks App (iOS - Swift 5 - 2021)
 
-Full featured Stocks App written in Swift 5 with MVVM architecture.
+Full featured Stocks App written in Swift 5 with MVC architecture.
 
 
 
